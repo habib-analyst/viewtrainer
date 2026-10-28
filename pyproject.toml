@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "viewtrainer"
+version = "0.1.0"
+description = "Train any PyTorch classifier so its augmented views must agree: consensus training with view-spread uncertainty and a defer-to-human verdict, behind a small fit / evaluate / predict Trainer."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Habib Ur Rehman" }]
+keywords = [
+  "consensus-training",
+  "consistency-regularization",
+  "uncertainty",
+  "selective-prediction",
+  "learning-to-defer",
+  "pytorch",
+  "image-classification",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.24",
+  "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/habib-analyst/viewtrainer"
+Repository = "https://github.com/habib-analyst/viewtrainer"
+Issues = "https://github.com/habib-analyst/viewtrainer/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+viewtrainer = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
